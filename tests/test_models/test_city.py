@@ -30,15 +30,18 @@ class TestCityInstantiation(unittest.TestCase):
         self.assertEqual(str, type(City().id))
 
     def test_created_at_is_public_datetime(self):
-        """Test that created_at is a public attribute and of type datetime."""
+        """Test that created_at is a public attribute and of type
+        datetime."""
         self.assertEqual(datetime, type(City().created_at))
 
     def test_updated_at_is_public_datetime(self):
-        """Test that updated_at is a public attribute and of type datetime."""
+        """Test that updated_at is a public attribute and of type
+        datetime."""
         self.assertEqual(datetime, type(City().updated_at))
 
     def test_state_id_is_public_class_attribute(self):
-        """Test that state_id is a public class attribute and of type string."""
+        """Test that state_id is a public class attribute and of
+        type string."""
         cy = City()
         self.assertEqual(str, type(City.state_id))
         self.assertIn("state_id", dir(cy))

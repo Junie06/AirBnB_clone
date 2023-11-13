@@ -51,14 +51,16 @@ class TestAmenityInstantiation(unittest.TestCase):
         self.assertNotEqual(am1.id, am2.id)
 
     def test_two_amenities_different_created_at(self):
-        """Test that two Amenity instances have different created_at timestamps."""
+        """Test that two Amenity instances have different
+        created_at timestamps."""
         am1 = Amenity()
         sleep(0.05)
         am2 = Amenity()
         self.assertLess(am1.created_at, am2.created_at)
 
     def test_two_amenities_different_updated_at(self):
-        """Test that two Amenity instances have different updated_at timestamps."""
+        """Test that two Amenity instances have different
+        updated_at timestamps."""
         am1 = Amenity()
         sleep(0.05)
         am2 = Amenity()

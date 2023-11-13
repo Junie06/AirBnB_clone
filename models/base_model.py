@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-Defines the BaseModel class, serving as the base for helper_all models.
+Defines the BaseModel class, serving as the base for all models.
 """
 
 from uuid import uuid4
@@ -19,7 +19,7 @@ class BaseModel:
 
         If no arguments are provided, it initializes a new
         instance with a unique ID,
-        creation time, and last helper_update time.
+        creation time, and last update time.
 
         If keyword arguments are provided, it deserializes the instance
         based on those arguments.
@@ -57,8 +57,8 @@ class BaseModel:
                 self.id,
                 self.__dict__)
 
-        def save(self):
-            """
+    def save(self):
+        """
         Updates the 'updated_at' variable and saves the instance.
         """
         self.updated_at = datetime.utcnow()
@@ -75,14 +75,14 @@ class BaseModel:
         return temp
 
     @classmethod
-    def helper_all(cls):
+    def all(cls):
         """
         Retrieves all current instances of the class.
         """
-        return models.storage.find_all(cls.__name__)
+        return models.storage.find_all_instances(cls.__name__)
 
     @classmethod
-    def helper_create(cls, *args, **kwargs):
+    def create(cls, *args, **kwargs):
         """
         creates an instance of the class and returns its ID.
         """
@@ -90,34 +90,34 @@ class BaseModel:
         return new.id
 
     @classmethod
-    def helper_count(cls):
+    def count(cls):
         """
-        Gets the number of helper_all current instances of the class.
+        Gets the number of all current instances of the class.
         """
         return len(models.storage.find_all(cls.__name__))
 
     @classmethod
-    def helper_show(cls, inst_id):
+    def show(cls, inst_id):
         """
         Retrieves an instance by its ID.
         """
-        return models.storage.find_by_id(
+        return models.storage.find_instance_by_id(
                 cls.__name__,
                 inst_id
                 )
 
     @classmethod
-    def helper_destroy(cls, inst_id):
+    def destroy(cls, inst_id):
         """
         Deletes an instance by its ID.
         """
-        return models.storage.delete_by_id(
+        return models.storage.delete_instance_by_id(
                 cls.__name__,
                 inst_id
                 )
 
     @classmethod
-    def helper_update(cls, inst_id, *args):
+    def update(cls, inst_id, *args):
         """
         Updates an instance based on provided arguments.
 

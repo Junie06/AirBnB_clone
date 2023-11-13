@@ -44,14 +44,16 @@ class TestBaseModelInstantiation(unittest.TestCase):
         self.assertNotEqual(bm1.id, bm2.id)
 
     def test_two_models_different_created_at(self):
-        """Test that two BaseModel instances have different created_at timestamps."""
+        """Test that two BaseModel instances have different
+        created_at timestamps."""
         bm1 = BaseModel()
         sleep(0.05)
         bm2 = BaseModel()
         self.assertLess(bm1.created_at, bm2.created_at)
 
     def test_two_models_different_updated_at(self):
-        """Test that two BaseModel instances have different updated_at timestamps."""
+        """Test that two BaseModel instances have different
+        updated_at timestamps."""
         bm1 = BaseModel()
         sleep(0.05)
         bm2 = BaseModel()
@@ -85,12 +87,14 @@ class TestBaseModelInstantiation(unittest.TestCase):
         self.assertEqual(bm.updated_at, dt)
 
     def test_instantiation_with_None_kwargs(self):
-        """Test that BaseModel instantiation with None kwargs raises TypeError."""
+        """Test that BaseModel instantiation with None kwargs
+        raises TypeError."""
         with self.assertRaises(TypeError):
             BaseModel(id=None, created_at=None, updated_at=None)
 
     def test_instantiation_with_args_and_kwargs(self):
-        """Test that BaseModel instantiation works with both args and kwargs."""
+        """Test that BaseModel instantiation works with both
+        args and kwargs."""
         dt = datetime.today()
         dt_iso = dt.isoformat()
         bm = BaseModel("12", id="345", created_at=dt_iso, updated_at=dt_iso)

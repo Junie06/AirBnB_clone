@@ -68,7 +68,7 @@ class HBNBCommand(Cmd):
             print("** instance id missing **")
         elif length == 2:
             try:
-                instance = storage.find_by_id(*args)
+                instance = storage.find_instance_by_id(*args)
                 print(instance)
             except NotFoundModelError:
                 print("** class doesn't exist **")
@@ -92,7 +92,7 @@ class HBNBCommand(Cmd):
             print("** instance id missing **")
         elif length == 2:
             try:
-                storage.delete_by_id(*args)
+                storage.delete_instance_by_id(*args)
             except NotFoundModelError:
                 print("** class doesn't exist **")
             except NotFoundInstanceError:
@@ -110,7 +110,7 @@ class HBNBCommand(Cmd):
 
         if length < 2:
             try:
-                print(storage.find_all(*args))
+                print(storage.find_all_instances(*args))
             except NotFoundModelError:
                 print("** class doesn't exist **")
         else:
@@ -132,7 +132,7 @@ class HBNBCommand(Cmd):
             print("** resultue missing **")
         else:
             try:
-                storage.update_one(*args[0:4])
+                storage.update_instance(*args[0:4])
             except NotFoundModelError:
                 print("** class doesn't exist **")
             except NotFoundInstanceError:
@@ -177,10 +177,10 @@ class HBNBCommand(Cmd):
         """Method that Overrides empty line to do nothing"""
         return
 
-    def strtok(line: str):
-        """Function that splits a line by spaces"""
-        args = shlex.split(line)
-        return args, len(args)
+def strtok(line: str):
+    """Function that splits a line by spaces"""
+    args = shlex.split(line)
+    return args, len(args)
 
 
 if __name__ == "__main__":
