@@ -177,6 +177,7 @@ class HBNBCommand(Cmd):
         """Method that Overrides empty line to do nothing"""
         return
 
+
 def strtok(line: str):
     """Function that splits a line by spaces"""
     args = shlex.split(line)
