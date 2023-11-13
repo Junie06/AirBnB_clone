@@ -35,8 +35,10 @@ class HBNBCommand(Cmd):
         return True
 
     def do_create(self, args):
-        """Method with usage: create <class> <key 1>=<resultue 2> <key 2>=<resultue 2> ...
-        Creates a new class instance with given keys/resultues and print its id.
+        """Method with usage: create <class> <key 1>=<resultue 2>
+        key 2>=<resultue 2> ...
+        Creates a new class instance with given keys/resultues
+        and print its id.
         """
         args, length = strtok(args)
 
@@ -53,7 +55,8 @@ class HBNBCommand(Cmd):
             pass
 
     def do_show(self, arg):
-        """Method that shows an Instance of Model based on its ModelName and id eg.
+        """Method that shows an Instance of Model based on its
+        ModelName and id eg.
         $ show MyModel instance_id
         Prints error message if either MyModel or instance_id is missing
         Prints an Error message for wrong MyModel or instance_id"""
@@ -76,7 +79,8 @@ class HBNBCommand(Cmd):
             pass
 
     def do_destroy(self, arg):
-        """Method that deletes an Instance of Model base on its ModelName and id eg.
+        """Method that deletes an Instance of Model base on
+        its ModelName and id eg.
         $ destroy MyModel instance_id
         Print error message if either MyModel or instance_id is missing
         Print an Error message for wrong MyModel or instance_id"""
@@ -172,7 +176,6 @@ class HBNBCommand(Cmd):
     def emptyline(self):
         """Method that Overrides empty line to do nothing"""
         return
-
 
     def strtok(line: str):
         """Function that splits a line by spaces"""

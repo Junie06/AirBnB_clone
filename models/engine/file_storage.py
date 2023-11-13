@@ -19,7 +19,8 @@ from datetime import datetime
 
 class FileStorage:
     """
-    This class serves as an Object-Relational Mapping to interface with our storage system.
+    This class serves as an Object-Relational Mapping to
+    interface with our storage system.
     """
 
     # class private variables

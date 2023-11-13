@@ -17,10 +17,12 @@ class BaseModel:
         """
         Initializes a new instance or deserializes a serialized one.
 
-        If no arguments are provided, it initializes a new instance with a unique ID,
+        If no arguments are provided, it initializes a new
+        instance with a unique ID,
         creation time, and last helper_update time.
 
-        If keyword arguments are provided, it deserializes the instance based on those arguments.
+        If keyword arguments are provided, it deserializes the instance
+        based on those arguments.
         """
 
         # initialize if nothing is passed
@@ -94,7 +96,6 @@ class BaseModel:
         """
         return len(models.storage.find_all(cls.__name__))
 
-
     @classmethod
     def helper_show(cls, inst_id):
         """
@@ -104,7 +105,6 @@ class BaseModel:
                 cls.__name__,
                 inst_id
                 )
-
 
     @classmethod
     def helper_destroy(cls, inst_id):
