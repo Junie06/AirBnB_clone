@@ -105,7 +105,8 @@ class BaseModel:
                 inst_id
                 )
 
-        @classmethod
+
+    @classmethod
     def helper_destroy(cls, inst_id):
         """
         Deletes an instance by its ID.
@@ -115,7 +116,7 @@ class BaseModel:
                 inst_id
                 )
 
-        @classmethod
+    @classmethod
     def helper_update(cls, inst_id, *args):
         """
         Updates an instance based on provided arguments.

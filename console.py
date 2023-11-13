@@ -174,8 +174,8 @@ class HBNBCommand(Cmd):
         return
 
 
-def strtok(line: str):
-    """Function that splits a line by spaces"""
+    def strtok(line: str):
+        """Function that splits a line by spaces"""
         args = shlex.split(line)
         return args, len(args)
 

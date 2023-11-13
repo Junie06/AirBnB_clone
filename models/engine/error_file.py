@@ -9,7 +9,8 @@ class NotFoundModelError(Exception):
     """
     Raised when attempting to access an unregistered model.
     """
-   def __init__(self, arg="BaseModel"):
+
+    def __init__(self, arg="BaseModel"):
        super().__init__(f"Model with name {arg} is not registered!")
 
 
