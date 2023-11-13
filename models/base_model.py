@@ -42,13 +42,13 @@ class BaseModel:
             self.created_at = datetime.strptime(
                     kwargs['created_at'],
                     '%Y-%m-%dT%H:%M:%S.%f')
-            if 'updated_at' in kwargs:
-                self.updated_at = datetime.strptime(
-                        kwargs['updated_at'],
-                        '%Y-%m-%dT%H:%M:%S.%f')
+        if 'updated_at' in kwargs:
+            self.updated_at = datetime.strptime(
+                    kwargs['updated_at'],
+                    '%Y-%m-%dT%H:%M:%S.%f')
 
-                def __str__(self):
-                    """
+    def __str__(self):
+        """
         Overrides the string representation of the instance.
         """
         pattern = "[{}] ({}) {}"
