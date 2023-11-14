@@ -129,7 +129,7 @@ class HBNBCommand(Cmd):
         elif length == 2:
             print("** attribute name missing **")
         elif length == 3:
-            print("** resultue missing **")
+            print("** value missing **")
         else:
             try:
                 storage.update_instance(*args[0:4])
@@ -156,7 +156,7 @@ class HBNBCommand(Cmd):
                     break
             return
         except AttributeError:
-            print("** inresultid method **")
+            print("** invalid method **")
         except NotFoundInstanceError:
             print("** no instance found **")
         except TypeError as er:
