@@ -94,7 +94,7 @@ class BaseModel:
         """
         Gets the number of all current instances of the class.
         """
-        return len(models.storage.find_all(cls.__name__))
+        return len(models.storage.find_all_instances(cls.__name__))
 
     @classmethod
     def show(cls, inst_id):
